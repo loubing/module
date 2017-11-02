@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="acsm_white">#FFFFFF</color>
+    <color name="white_eight">#CCFFFFFF</color>
+    <color name="below_head">#ECECEC</color>
+    <color name="bg_bottom">#F5F5F5</color>
+    <color name="bg_bottom_eight">#CCF5F5F5</color>
+    <color name="folder_text">#333333</color>
+    <color name="preview_no_text">#C8C8C8</color>
+    <color name="preview_text">#333333</color>
+    <color name="preview_page">#09091A</color>
+</resources>

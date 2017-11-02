@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 3
+        versionName "1.0.3"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    uploadArchives {
+        configuration = configurations.archives
+        repositories.mavenDeployer() {
+            //url地址是宿主仓库地址
+//            repository(url: 'http://192.168.21.146:8081/nexus/content/repositories/acsmsdk') {
+            repository(url: 'http://192.168.21.146:8081/nexus/content/repositories/acsmsdk') {
+                //用户名和密码是登录私服的用户名和密码
+                authentication(userName: 'admin', password: 'admin123')
+            }
+            //compile 'com.******:commonsdk:0.0.1' 引用对应下面的名字
+            pom.project {
+                name 'multiimageselector'
+                packaging 'aar'
+                description 'none'
+                version '0.0.7'
+                artifactId 'multiimageselector'
+                groupId 'com.acsm.module'
+            }
+
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+}
+
+
+
