@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
 
 
 
@@ -17,30 +17,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-
-
-    uploadArchives {
-        configuration = configurations.archives
-        repositories.mavenDeployer() {
-            //url地址是宿主仓库地址
-//            repository(url: 'http://192.168.21.146:8081/nexus/content/repositories/acsmsdk') {
-            repository(url: 'http://192.168.21.146:8081/nexus/content/repositories/acsmsdk') {
-                //用户名和密码是登录私服的用户名和密码
-                authentication(userName: 'admin', password: 'admin123')
-            }
-            //compile 'com.******:commonsdk:0.0.1' 引用对应下面的名字
-            pom.project {
-                name 'multiimageselector'
-                packaging 'aar'
-                description 'none'
-                version '0.0.7'
-                artifactId 'multiimageselector'
-                groupId 'com.acsm.module'
-            }
-
         }
     }
 
