@@ -7,7 +7,8 @@
 
 
     <application android:allowBackup="true">
-        <activity android:name="com.acsm.ShowBigImageActivity" />
+        <activity android:name="com.acsm.ShowBigImageActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
